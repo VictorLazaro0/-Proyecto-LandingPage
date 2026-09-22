@@ -1,0 +1,164 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+.header { 
+  background: #111827; 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 1rem 5%; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  animation: headerDown 0.8s ease; 
+}
+
+.logo { 
+  font-size: 1.6rem; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: transform 0.3s; 
+}
+.logo:hover { 
+  transform: scale(1.05); 
+} 
+.logo-highlight {
+   color: #fbbf24; 
+  }
+
+.nav ul { 
+  display: flex; 
+  gap: 2rem; 
+  list-style: none; 
+  margin: 0; 
+}
+.nav a {
+   color: white; 
+   text-decoration: none; 
+   font-weight: bold; 
+   transition: color 0.3s;
+   } 
+.nav a:hover {
+   color: #fbbf24; 
+  }
+
+.cart-btn {
+   background: #fbbf24; 
+   border: none; 
+   border-radius: 25px; 
+   padding: 0.6rem 1rem; 
+   cursor: pointer; 
+   transition: transform 0.3s;
+   } 
+.cart-btn:hover { 
+  transform: scale(1.1); 
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.hero button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: #fff;
+  color: #0072ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero button:hover {
+  transform: scale(1.1);
+}
+
+/* Grid de productos */
+.grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Máximo 3 productos por fila */
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 1.5rem;
+}
+
+h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.add-cart {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #0072ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-cart:hover {
+  background: #005bb5;
+}
+
+/* Footer */
+footer {
+  background-image: url('https://sportsmedicinesystems.com/wp-content/uploads/2021/08/Foro-virtual-El-deporte-dentro-y-fuera-de-la-cancha-2.jpg'); 
+  background-size:contain;
+  background-repeat:inherit;
+  /*background: #868585;*/
+  color: #0c0c0c;
+  text-align: center;
+  padding: 1.5rem;
+}
+redes-horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre cada red social */
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .redes-horizontal li {
+    display: inline-block;
+  }
