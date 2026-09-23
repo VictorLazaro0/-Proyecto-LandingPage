@@ -202,6 +202,9 @@ h2{
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+
+  /*display: grid;
+   align-content: center; */
 }
 
 .card:hover {
@@ -250,3 +253,36 @@ redes-horizontal {
   .redes-horizontal li {
     display: inline-block;
   }
+
+
+  //AGREGADO 
+  /* Animación de tarjetas */
+.card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toast de notificación */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0072ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
