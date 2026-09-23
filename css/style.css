@@ -1,0 +1,451 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ 
+ 
+ body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+ }
+ 
+ 
+ /* Header */
+ .header {
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: headerDown 0.8s ease;
+ }
+ 
+ 
+ .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+ }
+ .logo:hover {
+  transform: scale(1.05);
+ }
+ .logo-highlight {
+   color: #fbbf24;
+  }
+ 
+ 
+ .nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+ }
+ .nav a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s;
+   }
+ .nav a:hover {
+   color: #fbbf24;
+  }
+ 
+ 
+ .cart-btn {
+   background: #fbbf24;
+   border: none;
+   border-radius: 25px;
+   padding: 0.6rem 1rem;
+   cursor: pointer;
+   transition: transform 0.3s;
+   }
+ .cart-btn:hover {
+  transform: scale(1.1);
+ }
+ @keyframes headerDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+ 
+ 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ }
+ 
+ 
+ @keyframes imageAppear {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+ 
+ 
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+ }
+ 
+ 
+ /* Hero */
+ .hero {
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  padding: 4rem 8%;
+  background: linear-gradient(135deg, #111827, #1d4ed8, #00c6ff);
+  color: white;
+ }
+ 
+ 
+ .content {
+  width: 50%;
+ }
+ 
+ 
+ .tag {
+  color: #fbbf24;
+  font-weight: bold;
+ }
+ 
+ 
+ .hero h1 {
+  font-size: 4rem;
+  margin: 1rem 0;
+ }
+ 
+ 
+ .hero h1 span {
+  color: #fbbf24;
+ }
+ 
+ 
+ .text {
+  font-size: 1.2rem;
+ }
+ 
+ 
+ .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+ }
+ 
+ 
+ .btn-primary,
+ .btn-secondary {
+  padding: 0.9rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+ }
+ 
+ 
+ .btn-primary {
+  background: #fbbf24;
+  color: #111827;
+ }
+ 
+ 
+ .btn-secondary {
+  border: 2px solid white;
+  color: white;
+ }
+ 
+ 
+ #carouselExampleIndicators {
+  width: 35%;
+  margin-left: auto;
+ }
+ 
+ 
+ #carouselExampleIndicators img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+ }
+ 
+
+/* Grid de productos */
+.grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Máximo 3 productos por fila */
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 1.5rem;
+}
+
+h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  /*display: grid;
+   align-content: center; */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.add-cart {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #0072ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-cart:hover {
+  background: #005bb5;
+}
+
+/* Footer */
+footer {
+  background-image: url('https://sportsmedicinesystems.com/wp-content/uploads/2021/08/Foro-virtual-El-deporte-dentro-y-fuera-de-la-cancha-2.jpg'); 
+  background-size:contain;
+  background-repeat:inherit;
+  /*background: #868585;*/
+  color: #0c0c0c;
+  text-align: center;
+  padding: 1.5rem;
+}
+redes-horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre cada red social */
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .redes-horizontal li {
+    display: inline-block;
+  }
+
+
+  //AGREGADO 
+  /* Animación de tarjetas */
+.card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toast de notificación */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0072ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+#ofertas {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+#ofertas h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#ofertas > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.offer-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.discount-badge {
+    background-color: #ff4757;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.offer-card p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.btn-offer {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(0, 72, 255);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-offer:hover {
+    background-color: #26af5f;
+}
+
+
+
+
+/* Contenedor principal de la sección */
+.services-section {
+    padding: 80px 20px;
+    background-color: #f9fafb; /* Fondo suave y moderno */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabecera de la sección */
+.services-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-header h2 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+/* Cuadrícula adaptable (CSS Grid) */
+.services-grid {
+    display: grid;
+    /* Se acomoda automáticamente: mínimo 260px por tarjeta y se expande */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta individual */
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    /* Transición suave para el efecto hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor por encima de la tarjeta */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+    border-color: #2563eb; /* Destaca el borde con un tono azul */
+}
+
+/* Icono o emoji del servicio/producto */
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Títulos de las tarjetas */
+.service-card h3 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+/* Textos descriptivos */
+.service-card p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+
+/** animacion del js de carrito */
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
