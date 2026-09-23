@@ -1,274 +1,424 @@
-/* Reset básico */
+/* ==========================================
+   1. RESET BÁSICO Y ESTILOS GLOBALES
+   ========================================== */
+/* Elimina los márgenes, rellenos y ajusta el modelo de caja para todo el documento */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
- }
+  box-sizing: border-box; 
+}
  
- 
- body {
+/* Define la tipografía general, altura de línea, color de fondo y color de texto */
+body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f5f5f5;
-  color: #333;
- }
- 
- 
- /* Header */
- .header {
-  background: #111827;
+  background: #f5f5f5; 
+  color: #333; 
+}
+
+/* ==========================================
+   2. HEADER (BARRA DE NAVEGACIÓN SUPERIOR)
+   ========================================== */
+/* Contenedor principal de la barra de navegación fija */
+.header {
+  background: #111827; 
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5%;
-  position: sticky;
+  position: sticky; 
   top: 0;
-  z-index: 1000;
-  animation: headerDown 0.8s ease;
- }
+  z-index: 1000; 
+  animation: headerDown 0.8s ease; 
+}
  
- 
- .logo {
+/* Estilo del logotipo de la tienda */
+.logo {
   font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s;
- }
- .logo:hover {
-  transform: scale(1.05);
- }
- .logo-highlight {
-   color: #fbbf24;
-  }
+}
+
+/* Efecto al pasar el cursor sobre el logo */
+.logo:hover {
+  transform: scale(1.05); 
+}
+
+/* Color destacado para una parte del texto del logo */
+.logo-highlight {
+  color: #fbbf24; 
+}
  
- 
- .nav ul {
+/* Lista de enlaces dentro de la navegación */
+.nav ul {
   display: flex;
   gap: 2rem;
   list-style: none;
   margin: 0;
- }
- .nav a {
-   color: white;
-   text-decoration: none;
-   font-weight: bold;
-   transition: color 0.3s;
-   }
- .nav a:hover {
-   color: #fbbf24;
-  }
+}
+
+/* Estilo individual de los enlaces de navegación */
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el cursor sobre los enlaces */
+.nav a:hover {
+  color: #fbbf24; 
+}
  
- 
- .cart-btn {
-   background: #fbbf24;
-   border: none;
-   border-radius: 25px;
-   padding: 0.6rem 1rem;
-   cursor: pointer;
-   transition: transform 0.3s;
-   }
- .cart-btn:hover {
-  transform: scale(1.1);
- }
- @keyframes headerDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
- 
- 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
- }
- 
- 
- @keyframes imageAppear {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
- 
- 
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
- }
- 
- 
- /* Hero */
- .hero {
+/* Botón del carrito de compras */
+.cart-btn {
+  background: #fbbf24;
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Efecto de aumento al pasar el cursor sobre el botón del carrito */
+.cart-btn:hover {
+  transform: scale(1.1); 
+}
+
+/* ==========================================
+   3. SECCIÓN HERO (PRINCIPAL / BANNER)
+   ========================================== */
+/* Contenedor principal del banner de bienvenida con un fondo degradado */
+.hero {
   min-height: 550px;
   display: flex;
   align-items: center;
   padding: 4rem 8%;
-  background: linear-gradient(135deg, #111827, #1d4ed8, #00c6ff);
+  background: linear-gradient(135deg, #111827, #1d4ed8, #00c6ff); 
   color: white;
- }
+}
  
+/* Contenedor de los textos y botones del lado izquierdo del Hero */
+.content {
+  width: 50%; 
+}
  
- .content {
-  width: 50%;
- }
- 
- 
- .tag {
+/* Pequeña etiqueta de texto destacado arriba del título principal */
+.tag {
   color: #fbbf24;
   font-weight: bold;
- }
+}
  
- 
- .hero h1 {
+/* Título principal del Hero */
+.hero h1 {
   font-size: 4rem;
   margin: 1rem 0;
- }
+}
  
- 
- .hero h1 span {
+/* Texto resaltado dentro del título principal */
+.hero h1 span {
   color: #fbbf24;
- }
+}
  
- 
- .text {
+/* Párrafo descriptivo en el Hero */
+.text {
   font-size: 1.2rem;
- }
+}
  
- 
- .hero-buttons {
+/* Contenedor para alinear los botones de llamada a la acción */
+.hero-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
- }
+}
  
- 
- .btn-primary,
- .btn-secondary {
+/* Estilos base compartidos para los botones de la sección Hero */
+.btn-primary,
+.btn-secondary {
   padding: 0.9rem 1.5rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
- }
+}
  
- 
- .btn-primary {
+/* Estilo específico para el botón principal (llamativo) */
+.btn-primary {
   background: #fbbf24;
   color: #111827;
- }
+}
  
- 
- .btn-secondary {
+/* Estilo específico para el botón secundario (con borde blanco) */
+.btn-secondary {
   border: 2px solid white;
   color: white;
- }
+}
  
- 
- #carouselExampleIndicators {
+/* Contenedor del carrusel de Bootstrap alineado a la derecha */
+#carouselExampleIndicators {
   width: 35%;
   margin-left: auto;
- }
+}
  
- 
- #carouselExampleIndicators img {
+/* Altura y ajuste de las imágenes dentro del carrusel */
+#carouselExampleIndicators img {
   height: 400px;
-  object-fit: cover;
+  object-fit: cover; 
   border-radius: 20px;
- }
- 
+}
 
-/* Grid de productos */
+/* ==========================================
+   4. SECCIÓN DE PRODUCTOS (GRID RESPONSIVO)
+   ========================================== */
+/* Estilo general para los títulos de sección (h2) */
+h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Cuadrícula adaptable (Grid) para acomodar los productos de forma responsiva */
 .grid {
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Máximo 3 productos por fila */
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-h2{
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-}
+/* Tarjeta individual de cada producto y sus propiedades de animación inicial */
 .card {
   background: #fff;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-
-  /*display: grid;
-   align-content: center; */
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: all 0.6s ease;
 }
 
+/* Clase aplicada por JavaScript para hacer visible la tarjeta con animación */
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto elevación al pasar el cursor sobre la tarjeta de producto */
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); 
 }
 
+/* Imagen de la tarjeta de producto con dimensiones fijas y control de proporción */
 .card img {
-  max-width: 100%;
+  width: 100%;
+  height: 200px; 
+  object-fit: contain; 
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
+/* Botón interno para agregar el producto al carrito */
 .add-cart {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
   background: #0072ff;
   color: #fff;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
+/* Cambio de color del botón al pasar el cursor */
 .add-cart:hover {
   background: #005bb5;
 }
 
-/* Footer */
+/* ==========================================
+   5. SECCIÓN DE OFERTAS
+   ========================================== */
+/* Contenedor principal de la sección de ofertas */
+#ofertas {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Título dentro de la sección de ofertas */
+#ofertas h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Párrafo descriptivo de las ofertas */
+#ofertas > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Cuadrícula específica para alinear las tarjetas de ofertas */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Tarjeta individual de oferta */
+.offer-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Etiqueta visual que indica el porcentaje de descuento */
+.discount-badge {
+  background-color: #ff4757;
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Título del artículo en oferta */
+.offer-card h3 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Descripción del artículo en oferta */
+.offer-card p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* Botón de acción para aprovechar la oferta */
+.btn-offer {
+  display: inline-block;
+  text-align: center;
+  background-color: rgb(0, 72, 255);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+/* Efecto hover para el botón de oferta */
+.btn-offer:hover {
+  background-color: #26af5f;
+}
+
+/* ==========================================
+   6. SECCIÓN DE SERVICIOS
+   ========================================== */
+/* Contenedor principal de la sección de servicios */
+.services-section {
+  padding: 80px 20px;
+  background-color: #f9fafb;
+}
+
+/* Contenedor limitador de ancho para centrar el contenido de los servicios */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado descriptivo de los servicios ofrecidos */
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Título principal de servicios */
+.services-header h2 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo o texto explicativo de servicios */
+.services-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+/* Cuadrícula responsiva que organiza las tarjetas de servicio */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjeta individual de cada servicio */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto visual al pasar el cursor por encima de la tarjeta de servicio */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+  border-color: #2563eb;
+}
+
+/* Estilo para los iconos gráficos o emojis de los servicios */
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Título de cada tarjeta de servicio */
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+/* Descripción detallada del servicio */
+.service-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   7. FOOTER Y COMPONENTES EXTRAS (TOAST)
+   ========================================== */
+/* Pie de página con imagen de fondo deportiva y texto centrado */
 footer {
   background-image: url('https://sportsmedicinesystems.com/wp-content/uploads/2021/08/Foro-virtual-El-deporte-dentro-y-fuera-de-la-cancha-2.jpg'); 
-  background-size:contain;
-  background-repeat:inherit;
-  /*background: #868585;*/
+  background-size: contain;
+  background-repeat: inherit;
   color: #0c0c0c;
   text-align: center;
   padding: 1.5rem;
 }
-redes-horizontal {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre cada red social */
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  .redes-horizontal li {
-    display: inline-block;
-  }
 
-
-  //AGREGADO 
-  /* Animación de tarjetas */
-.card {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Toast de notificación */
+/* Estilo flotante para la notificación emergente (Toast del carrito) */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -280,172 +430,34 @@ redes-horizontal {
   animation: fadeInOut 2s ease forwards;
 }
 
+/* Animación de aparición y desvanecimiento para las notificaciones Toast */
 @keyframes fadeInOut {
   0% { opacity: 0; transform: translateY(20px); }
   20% { opacity: 1; transform: translateY(0); }
   80% { opacity: 1; }
   100% { opacity: 0; transform: translateY(20px); }
 }
-#ofertas {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+
+/* Animación de entrada superior para el menú de navegación (Header) */
+@keyframes headerDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#ofertas h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-#ofertas > p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.offers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.offer-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.discount-badge {
-    background-color: #ff4757;
-    color: white;
-    padding: 4px 10px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.offer-card h3 {
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.offer-card p {
-    color: #555;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.btn-offer {
-    display: inline-block;
-    text-align: center;
-    background-color: rgb(0, 72, 255);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-offer:hover {
-    background-color: #26af5f;
-}
-
-
-
-
-/* Contenedor principal de la sección */
-.services-section {
-    padding: 80px 20px;
-    background-color: #f9fafb; /* Fondo suave y moderno */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Cabecera de la sección */
-.services-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.services-header h2 {
-    font-size: 2.5rem;
-    color: #111827;
-    margin-bottom: 10px;
-}
-
-.services-header p {
-    font-size: 1.1rem;
-    color: #6b7280;
-}
-
-/* Cuadrícula adaptable (CSS Grid) */
-.services-grid {
-    display: grid;
-    /* Se acomoda automáticamente: mínimo 260px por tarjeta y se expande */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-/* Tarjeta individual */
-.service-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    /* Transición suave para el efecto hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* Efecto al pasar el cursor por encima de la tarjeta */
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
-    border-color: #2563eb; /* Destaca el borde con un tono azul */
-}
-
-/* Icono o emoji del servicio/producto */
-.service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-/* Títulos de las tarjetas */
-.service-card h3 {
-    font-size: 1.25rem;
-    color: #1f2937;
-    margin-bottom: 12px;
-}
-
-/* Textos descriptivos */
-.service-card p {
-    font-size: 0.95rem;
-    color: #4b5563;
-    line-height: 1.5;
-}
-
-
-/** animacion del js de carrito */
-.card {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Animación de desplazamiento lateral para elementos visuales */
+@keyframes imageAppear {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
